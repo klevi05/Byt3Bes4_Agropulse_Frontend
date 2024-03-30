@@ -1,7 +1,7 @@
-import React from 'react'
 import {useNavigate} from 'react-router-dom'
 import { useState } from 'react'
-import logo from '../assets/logo.svg'
+import logo from '../../assets/logo.svg'
+import "./login.css"
 function SignIn(){
     let navigate = useNavigate();
     const [error, setError] = useState('')

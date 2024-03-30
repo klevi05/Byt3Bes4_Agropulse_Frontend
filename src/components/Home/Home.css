@@ -1,0 +1,13 @@
+.Home{
+    display: grid;
+    width: 100%;
+    grid-template-columns: 15% 85%;
+    grid-template-areas: "nav page";
+}
+.nav{
+    grid-area: "nav";
+    width: 100%;
+}
+.page{
+    grid-area: "page";
+}

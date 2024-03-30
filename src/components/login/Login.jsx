@@ -1,16 +1,18 @@
-import React from 'react'
 import {Link, useNavigate} from 'react-router-dom'
 import { useState } from 'react'
-import logo from '../assets/logo.svg'
+import logo from '../../assets/logo.svg'
+import Cookies from 'js-cookie'
+
+import "./login.css"
 function Login(){
     let navigate = useNavigate()
     const [error, setError] = useState('')
     const [username, setUsername] = useState('')
     const [password, setPassword] = useState('')
-    const login = (e) =>{
-        e.preventDefault();
+    const login= () =>{
         if (username != ""){
             if(password !=""){
+                Cookies.set('name', 'value')
                 navigate('/home')
             }else{
                 setError('Please fill the fields below')
