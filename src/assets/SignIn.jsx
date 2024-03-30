@@ -4,15 +4,20 @@ import { useState } from 'react'
 function SignIn(){
     let navigate = useNavigate();
     const [error, setError] = useState('')
+    const [email, setEmail] = useState('')
     const [username, setUsername] = useState('')
     const [password, setPassword] = useState('')
     const signIn = (e) =>{
         e.preventDefault();
         if (username != ""){
-            if(password !=""){
-                navigate('/home')
+            if(email !="" && /^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,4}$/i.test(email) ){
+                if(password!=""){
+                    navigate('/')
+                }else{
+                    setError('Please fill the fields below')
+                }
             }else{
-                setError('Please fill the fields below')
+                setError('This is not an email')
             }
         }else{
             setError('Please fill the fields below')
@@ -37,13 +42,13 @@ function SignIn(){
                             Email
                         </label>
                         <br />
-                        <input type="email" id='email' className='usernameInput' onChange={(e)=> setPassword(e.target.value)} required/>
+                        <input type="email" id='email' className='usernameInput' onChange={(e)=> setEmail(e.target.value)} required/>
                         <br />
                         <label htmlFor="password">
                             Password
                         </label>
                         <br />
-                        <input type="password" id='password' className='usernameInput'/>
+                        <input type="password" id='password' className='usernameInput' onChange={(e)=> setPassword(e.target.value)}/>
                         <br />
                         <button className='signInButton' onClick={signIn}> Sign Up </button>
                     </form>
