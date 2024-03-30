@@ -1,6 +1,7 @@
 import React from 'react'
 import {Link, useNavigate} from 'react-router-dom'
 import { useState } from 'react'
+import logo from '../assets/logo.svg'
 function Login(){
     let navigate = useNavigate()
     const [error, setError] = useState('')
@@ -21,10 +22,10 @@ function Login(){
     return(
         <div className='LogIn'>
             <div className='logInFormBox'>
-                <div action="#" className='logInBox'>
+                <div className='logInBox'>
                     <div className='LoginTitle'>
-                        <h1>Agro Pulse</h1>
-                    </div>
+                            <img className='logoLog' src={logo} alt="logo" />
+                        </div>
                     <form className='logInForm'>
                         <p className='error'>{error}</p>
                         <label htmlFor="username">

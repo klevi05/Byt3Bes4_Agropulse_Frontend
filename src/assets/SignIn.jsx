@@ -1,6 +1,7 @@
 import React from 'react'
 import {useNavigate} from 'react-router-dom'
 import { useState } from 'react'
+import logo from '../assets/logo.svg'
 function SignIn(){
     let navigate = useNavigate();
     const [error, setError] = useState('')
@@ -28,7 +29,7 @@ function SignIn(){
             <div className='logInFormBox'>
                 <div action="#" className='logInBox'>
                     <div className='LoginTitle'>
-                        <h1>Agro Pulse</h1>
+                        <img className='logoLog' src={logo} alt="logo" />
                     </div>
                     <form action="" className='logInForm'>
                         <p className='error'>{error}</p>
@@ -50,7 +51,7 @@ function SignIn(){
                         <br />
                         <input type="password" id='password' className='usernameInput' onChange={(e)=> setPassword(e.target.value)}/>
                         <br />
-                        <button className='signInButton' onClick={signIn}> Sign Up </button>
+                        <button className='logInButton' onClick={signIn}> Sign Up </button>
                     </form>
                 </div>
             </div>

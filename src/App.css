@@ -1,3 +1,12 @@
+:root {
+  --dark-green: #4F6F52;
+  --mid-green: #739072;
+  --light-green: #86A789;
+  --mint: #D2E3C8;
+}
+.logoLog{
+  width: 20em;
+}
 .LogIn{
   display: flex;
   justify-content: end;
@@ -7,20 +16,25 @@
   background-repeat: no-repeat;
   background-size: cover;
 }
+.logInBox{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 3em;
+}
 .logInFormBox{
+  display: flex;
+  align-items: center;
+  justify-content: center;
   height: 100%;
   width: 50%;
   font-family: "Inter", sans-serif;
   background-color: white;
 }
-.LoginTitle{
-  margin-top: 2vh;
-  margin-left: 45%;
-}
+
 .logInForm{
-  margin-top: 25vh;
   width: 40vh;
-  margin-left: 35%;
 }
 .usernameInput{
   width: 100%;
@@ -42,15 +56,8 @@
   border: none;
   cursor: pointer;
 }
-.signInButton{
-  margin-top: 5%;
-  width: 100%;
-  padding: 5%;
-  font-size: 16px;
-  background-color: black;
-  color: white;
-  border: none;
-  cursor: pointer;
+.logInButton:hover{
+  background-color: #4F6F52;
 }
 .link{
   color: white;
@@ -66,4 +73,20 @@
 .error{
   color: red;
   margin-bottom: 2%;
+}
+@media screen and (max-width: 400px){
+  .logInFormBox{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+  }
+  .LoginTitle{
+    margin-left: 0;
+  }
+  .logInForm{
+    margin-left: 0;
+    margin-top: 5vh;
+  }
+  
 }
