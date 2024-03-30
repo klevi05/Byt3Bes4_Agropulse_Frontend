@@ -3,7 +3,7 @@
   justify-content: end;
   height: 100vh;
   width: auto;
-  background-image: url('./assets/background.jpeg');
+  background-image: url('./assets/background.png');
   background-repeat: no-repeat;
   background-size: cover;
 }
