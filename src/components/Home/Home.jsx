@@ -1,8 +1,8 @@
 import { useEffect } from "react";
 import cookies from 'js-cookie'
 import "./Home.css"
-
-import { useNavigate } from "react-router-dom";
+import logo from '../../assets/logo.svg'
+import { useNavigate, Link } from "react-router-dom";
 function Home(){
     const navigate = useNavigate()
     useEffect(()=>{
@@ -19,12 +19,33 @@ function Home(){
     return(
         <div className="Home">
             <div className="nav">
-                <h1>h</h1>
+                <div className="funcionalities">
+                    <img className="homeLogo" src={logo} alt="logo" />
+                    <Link to={'/home/newField'}><button className="newFieldButton">New fields</button></Link>
+                </div>
+                <div className="logOutBox">
+                    <button className="logOutButton" type="submit" onClick={refreshPage} > Log Out</button>
+                </div>
             </div>
+
             <div className="page">
-                <h1>page</h1>
+                <div className="pageTitleBox">
+                    <div className="pageTitle">
+                        <h1>Your current Data</h1>
+                    </div>
+                </div>
+                <div className="bigDataBox">
+                    <div className="dataBox">
+                        hello
+                    </div>
+                    <div className="dataBox">
+                        hello
+                    </div>
+                    <div className="dataBox">
+                        hello
+                    </div>
+                </div>
             </div>
-            <button type="submit" onClick={refreshPage} > Button</button>
         </div>
     )
 }
