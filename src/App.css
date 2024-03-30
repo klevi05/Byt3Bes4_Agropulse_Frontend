@@ -1,3 +1,9 @@
+html{
+  font-family: "Roboto", sans-serif;
+  font-weight: 400;
+  font-style: normal;
+}
+
 :root {
     --dark-green: #4F6F52;
     --mid-green: #739072;

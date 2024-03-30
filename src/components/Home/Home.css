@@ -72,9 +72,33 @@
   width: 80px;
   background-color: white;
   height: 80px;
+  object-fit: fill;
   border-radius: 100%;
 }
 
+
+.profile-logo-container img{
+  border-radius: 100%;
+  width: 100%; 
+}
+
+
 .profile-details-container h3 {
   color: white;
+}
+
+.add-field{
+    display: flex;
+    align-items: center;
+    gap: 1em; 
+    padding: 1em; 
+}
+
+.add-field:hover{
+    background-color: rgb(245, 245, 245);
+}
+
+.add-field h3{
+    color: black; 
+    text-decoration: none;
 }
