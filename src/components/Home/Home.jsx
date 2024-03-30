@@ -3,8 +3,14 @@ import cookies from 'js-cookie'
 import "./Home.css"
 import logo from '../../assets/logo.svg'
 import { useNavigate, Link } from "react-router-dom";
+import FieldCard from "./FieldCard";
+import { useState } from "react";
+import ArrowBackIosNewIcon from '@mui/icons-material/ArrowBackIosNew';
+
 function Home(){
-    const navigate = useNavigate()
+    const navigate = useNavigate();
+    const [expanded, setExpaned] = useState(false); 
+
     useEffect(()=>{
         if(cookies.get('name') == undefined){
             navigate('/')
@@ -12,41 +18,59 @@ function Home(){
             console.log("hello")
         }
     })
+
     function refreshPage() {
         cookies.remove('name')
         window.location.reload(false);
-      }
-    return(
-        <div className="Home">
-            <div className="nav">
-                <div className="funcionalities">
-                    <img className="homeLogo" src={logo} alt="logo" />
-                    <Link to={'/home/newField'}><button className="newFieldButton">New fields</button></Link>
-                </div>
-                <div className="logOutBox">
-                    <button className="logOutButton" type="submit" onClick={refreshPage} > Log Out</button>
-                </div>
-            </div>
+    }
 
-            <div className="page">
-                <div className="pageTitleBox">
-                    <div className="pageTitle">
-                        <h1>Your current Data</h1>
+    const data = {
+        location: "Kampala",
+        area: "10",
+        crop: "Rice"
+    }
+
+    return(
+        <div className="home">
+            { expanded == true  && 
+                <div className="navbar">
+                    <div>
+                        <div>
+                            <ArrowBackIosNewIcon onClick={() => {setExpaned(!expanded)}} sx={{cursor: "pointer", "&:hover" : {backgroundColor: "rgb(245, 245, 245)"}, padding: "0.5em"}}/>
+                        </div>
+                        <div className="logo-container">
+                            <img src={logo} alt="" />
+                        </div>
+                        <div className="profile-container">
+                            <div className="profile-logo-container">
+                            </div>
+                            <div className="profile-details-container">
+                                <h3>Name Surname</h3>
+                            </div>
+                        </div>  
+                    </div>
+                    <button onClick={refreshPage}>Sign Out</button>
+                </div>
+            }
+
+            { !expanded &&
+                <div className="navbar-closed">
+                    <div className="profile-logo-container" onClick={() => {setExpaned(!expanded);}}>
                     </div>
                 </div>
-                <div className="bigDataBox">
-                    <div className="dataBox">
-                        hello
-                    </div>
-                    <div className="dataBox">
-                        hello
-                    </div>
-                    <div className="dataBox">
-                        hello
-                    </div>
-                </div>
+            }
+
+            <div className="dashboard">
+
+                <FieldCard data={data} />
+                <FieldCard data={data} />
+                <FieldCard data={data} />
+                <FieldCard data={data} />
+                <FieldCard data={data} />
+                <FieldCard data={data} />
+                <FieldCard data={data} />
             </div>
         </div>
-    )
+    );
 }
 export default Home;

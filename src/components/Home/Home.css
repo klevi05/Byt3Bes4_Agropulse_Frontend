@@ -1,90 +1,80 @@
 :root {
-    --dark-green: #4F6F52;
-    --mid-green: #739072;
-    --light-green: #86A789;
-    --mint: #D2E3C8;
-  }
-.Home{
-    display: grid;
-    width: 100%;
-    grid-template-columns: 15% 85%;
-    grid-template-areas: "nav page";
-    font-family: "Inter", sans-serif;
+  --dark-green: #4f6f52;
+  --mid-green: #739072;
+  --light-green: #86a789;
+  --mint: #d2e3c8;
 }
-.nav{
-    grid-area: "nav";
-    display: grid;
-    grid-template-rows: 90% 10%;
-    width: 100%;
-    height: 100vh;
-    border-right: 1px solid #4F6F52;
+
+.home {
+  height: 100vh;
+  overflow: hidden;
+  display: flex;
 }
-.page{
-    grid-area: "page";
+
+.navbar {
+  display: flex;
+  flex-direction: column;
+  width: 40%;
+  min-width: 300px;
+  padding: 1em;
+  height: 100vh;
+  box-shadow: 0 3px 10px rgb(0 0 0 / 0.2);
 }
-.homeLogo{
-    margin: 1rem;
+
+.navbar-closed {
+  width: 100px;
+  background-color: var(--dark-green);
+  height: 100vh;
+  padding: 1em;
 }
-.logOutButton{
-    width: 90%;
-    margin: 5%;
-    padding: 3%;
-    background-color: #4F6F52;
-    color: white;
-    border: none;
-    font-size: 15px;
+
+.navbar button {
+  background-color: white;
+  border-color: var(--dark-green);
+  border: 2px solid;
+  padding: 1em;
+  cursor: pointer;
+  margin-top: auto;
+  margin-bottom: 3em;
 }
-.logOutBox{
-    height: 100%;
+
+.navbar button:hover {
+  background-color: var(--dark-green);
+  color: white;
 }
-.logOutButton:hover{
-    background-color: black;
+
+.logo-container {
+  width: 90%;
+  margin: auto;
 }
-.funcionalities{
-    display: inline;
-    justify-content: center;
+
+.dashboard {
+  width: 100%;
+  display: flex;
+  gap: 2em;
+  flex-direction: column;
+  align-items: center;
+  padding: 3em;
+  overflow-y: scroll;
 }
-.newFieldButton{
-    margin-top: 3rem;
-    width: 80%;
-    margin-left: 10%;
-    padding: 0.5rem;
-    border: none;
-    background-color: white;
-    font-size: 16px;
-    box-shadow: 2px 5px 10px #888888;
-    border: 2px solid #4F6F52;
+
+.profile-container {
+  display: flex;
+  background-color: #4f6f52;
+  align-items: center;
+  padding: 0.5em;
+  border-radius: 0.5em;
+  gap: 2em;
+  margin: 2em 0;
 }
-.newFieldButton:hover{
-    background-color: #4F6F52;
-    color: white;
+
+.profile-logo-container {
+  width: 80px;
+  background-color: white;
+  height: 80px;
+  border-radius: 100%;
 }
-.page{
-    display: grid;
-    grid-template-rows: 5% 95%;
-}
-.pageTitleBox{
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
-.pageTitle{
-    font-size: 24px;
-    margin-bottom: 3%;
-}
-.bigDataBox{
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-direction: column;
-    overflow-y: scroll;
-    gap: 3rem;
-}
-.dataBox{
-    border: 1px solid grey;
-    width: 60rem;
-    height: 45rem;
-    border-radius: 30px;
-    border:  none;
-    box-shadow: 5px 10px 18px #888888;
+
+.profile-details-container h3 {
+  color: white;
 }
