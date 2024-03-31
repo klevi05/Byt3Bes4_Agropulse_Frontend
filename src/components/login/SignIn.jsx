@@ -3,6 +3,7 @@ import { useState } from 'react'
 import logo from '../../assets/logo.svg'
 import "./login.css"
 function SignIn(){
+    const id = Math.random(1000000000000)
     let navigate = useNavigate();
     const [error, setError] = useState('')
     const [email, setEmail] = useState('')
@@ -13,7 +14,28 @@ function SignIn(){
         if (username != ""){
             if(email !="" && /^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,4}$/i.test(email) ){
                 if(password!=""){
-                    navigate('/')
+                    fetch('http://127.0.0.1:5000/signUp',{mode:"cors", method:"POST", headers:{'Content-Type':'application/json'}, body: JSON.stringify({
+                        "_id": id,
+                        "name": username,
+                        "email": email,
+                        "password": password
+                })})
+                .then((result)=>{
+                    return result.json();
+                    })
+                .then((result)=>{
+                    if(result.status_code == 404){
+                        setError("This username is been registered before")
+                    }else{
+                        if(result.status_code == 401){
+                            setError("This email already exists")
+                        }else{
+                            navigate('/')
+                        }
+                    }
+                }).catch((error) => {
+                    console.log(error);
+                })
                 }else{
                     setError('Please fill the fields below')
                 }

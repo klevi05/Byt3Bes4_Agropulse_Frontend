@@ -16,8 +16,6 @@ function Home(){
     useEffect(()=>{
         if(cookies.get('name') == undefined){
             navigate('/')
-        }else{
-            console.log("hello")
         }
     })
 
@@ -48,7 +46,7 @@ function Home(){
                                 <img src={FallBackProfile} alt="" />
                             </div>
                             <div className="profile-details-container">
-                                <h3>Name Surname</h3>
+                                <h3>{cookies.get('name')}</h3>
                             </div>
                         </div>  
                         <Link to="/addField">
