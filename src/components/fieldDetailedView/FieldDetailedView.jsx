@@ -31,7 +31,7 @@ useEffect(() => {
                     <p>Area</p>
                     <h2>{area} ha</h2>
                 </div>
-                <div style={{display:"flex", gap: "3em"}}>
+                <div style={{display:"flex", flexDirection:'column', gap:'2rem'}}>
                     <div className='field-detailed-view-main-predictions'>
                         {
                             loaded &&
