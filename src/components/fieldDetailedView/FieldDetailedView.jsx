@@ -37,16 +37,16 @@ useEffect(() => {
                             loaded &&
                             <>
                                 <div className='field-current-data field-data'>
-                                    <p>Crop</p>
+                                    <p>Current Crop</p>
                                     <h2>{crop}</h2>
-                                    <p>Unit Price</p>
+                                    <p>Current Unit Price</p>
                                     <h2>{parseFloat(dataSet.price).toFixed(4)}$</h2>
                                 </div>
                                 <div className='field-suggested-data field-data'>
-                                    <p>Crop</p>
-                                    <h2>{dataSet.items[Math.floor(Math.random()*2)+1]}</h2>
-                                    <p>Unit Price</p>
-                                    <h2>{(parseFloat(dataSet.price) + 0.0356).toFixed(4)}$</h2>
+                                    <p>Suggested Crop</p>
+                                    <h2 style={{color: "#2e96ff"}}>{dataSet.items[Math.floor(Math.random()*2)+1]}</h2>
+                                    <p>Suggested Unit Price</p>
+                                    <h2 style={{color: "#2e96ff"}}>{(parseFloat(dataSet.price) + 0.0356).toFixed(4)}$</h2>
                                 </div>
                             </>
                         }

@@ -24,9 +24,9 @@ function Home(){
         fetch('http://localhost:5000/farmerDataGet',{mode:"cors", method:"GET", headers:{'Content-Type':'application/json'}})
         .then(result=>result.json())
         .then(result => {
-            setDataSet(result)
+            setDataSet(result);
             console.log(result)
-            setLoaded(true)
+            setLoaded(true);
         })
     }, [])
 
@@ -76,6 +76,7 @@ function Home(){
 
             { loaded &&
                 <div className="dashboard">
+                    {dataSet.length == 0 && <h3>No fields added yet!</h3>}
                     {dataSet.map((data) => (<FieldCard data={data} key={data.id}/>))}
                 </div>
             }
