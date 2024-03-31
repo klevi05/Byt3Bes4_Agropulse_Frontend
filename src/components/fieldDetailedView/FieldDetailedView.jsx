@@ -64,6 +64,14 @@ useEffect(() => {
                         height={400}
                         />
                     </div>
+                    <div className='charts-comparison'>
+                        <BarChart
+                        xAxis={[{ scaleType: 'band', data: ['Consumption rate per capita'] }]}
+                        series={[{ data: [parseFloat(dataSet.consumption1).toFixed(4)*1,0] }, { data: [(parseFloat(dataSet.consumption2) + 0.0356).toFixed(4)*1,0] }]}
+                        width={300}
+                        height={400}
+                        />
+                    </div>
                 </div>
             </div>
         </div>
