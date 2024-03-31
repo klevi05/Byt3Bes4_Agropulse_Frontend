@@ -14,7 +14,7 @@ const FieldCard = (props) => {
                 </div>
                 <div className="field-details">
                     <p style={{color:"#4f6f52"}}>Location</p>
-                    <h1>{location}</h1>
+                    <h1>{country}</h1>
                     <p style={{color:"#4f6f52"}}>Area</p>
                     <h2>{area}</h2>
                     <p style={{color:"#4f6f52"}}>Current Crop</p>
