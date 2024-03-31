@@ -7,7 +7,8 @@ import FieldCard from "./FieldCard";
 import { useState } from "react";
 import ArrowBackIosNewIcon from '@mui/icons-material/ArrowBackIosNew';
 import AddCircleIcon from '@mui/icons-material/AddCircle';
-import FallBackProfile from '../../assets/no_profile_pic.png'
+import FallBackProfile from '../../assets/no_profile_pic.png';
+import DefPfp from '../../assets/pfp.png';
 import CircularProgress from '@mui/material/CircularProgress';
 
 function Home(){
@@ -48,7 +49,7 @@ function Home(){
                         </div>
                         <div className="profile-container">
                             <div className="profile-logo-container">
-                                <img src={FallBackProfile} alt="" />
+                                <img src={DefPfp} alt="" />
                             </div>
                             <div className="profile-details-container">
                                 <h3>{cookies.get('name')}</h3>
@@ -68,7 +69,7 @@ function Home(){
             { !expanded &&
                 <div className="navbar-closed">
                     <div className="profile-logo-container" onClick={() => {setExpaned(!expanded);}}>
-                    <img src={FallBackProfile} alt="" />
+                    <img src={DefPfp} alt="" />
                     </div>
                 </div>
             }

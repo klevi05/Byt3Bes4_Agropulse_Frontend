@@ -45,11 +45,6 @@
 .field-current-data{
     border-bottom: 2px solid black; 
 }
-
-.field-suggested-data{
-
-}
-
 .charts-comparison{
     display: flex;
     justify-content: center;

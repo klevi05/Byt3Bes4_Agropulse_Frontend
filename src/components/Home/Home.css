@@ -69,10 +69,13 @@
 }
 
 .profile-logo-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
   width: 80px;
   background-color: white;
   height: 80px;
-  object-fit: fill;
+  object-fit: cover;
   border-radius: 100%;
 }
 

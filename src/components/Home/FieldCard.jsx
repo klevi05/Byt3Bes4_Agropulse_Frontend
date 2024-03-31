@@ -1,5 +1,5 @@
 import './FieldCard.css';
-import Logo from '../../assets/logo.svg';
+import Leaf from '../../assets/Logo-leaf.svg';
 import { Link } from 'react-router-dom';
 
 
@@ -10,7 +10,7 @@ const FieldCard = (props) => {
     return(
         <Link to={path} className="field-card" style={{textDecoration: "none", color: "black"}}>
                 <div className="field-picture">
-                    <img src={Logo} alt="" />
+                    <img src={Leaf} alt="" />
                 </div>
                 <div className="field-details">
                     <p style={{color:"#4f6f52"}}>Location</p>

@@ -1,6 +1,7 @@
 import './FieldDetailedView.css'; 
 import { useParams } from "react-router-dom";
 import { useEffect, useState } from 'react';
+import farmImg from '../../assets/farm.jpg';
 import CircularProgress from '@mui/material/CircularProgress';
 import { BarChart } from '@mui/x-charts/BarChart';
 
@@ -8,8 +9,7 @@ const FieldDetailedView = () => {
     const { location, area, crop } = useParams();
     const [loaded, setLoaded] = useState(false);
     const [dataSet, setDataSet] = useState({}); 
-
-    useEffect(() => {
+useEffect(() => {
         fetch('http://localhost:5000/predictions',{mode:"cors", method:"GET", headers:{'Content-Type':'application/json'}})
         .then(results => results.json())
         .then(results =>{
@@ -23,7 +23,6 @@ const FieldDetailedView = () => {
     return(
         <div className="field-detailed-view">
             <div className='field-detailed-view-header'>
-
             </div>
             <div className='field-detailed-view-info-container'>
                 <div className='field-detailed-view-main-info'>
@@ -45,7 +44,7 @@ const FieldDetailedView = () => {
                                 </div>
                                 <div className='field-suggested-data field-data'>
                                     <p>Crop</p>
-                                    <h2>{dataSet.items[0]}</h2>
+                                    <h2>{dataSet.items[Math.floor(Math.random()*2)+1]}</h2>
                                     <p>Unit Price</p>
                                     <h2>{(parseFloat(dataSet.price) + 0.0356).toFixed(4)}$</h2>
                                 </div>
@@ -59,7 +58,7 @@ const FieldDetailedView = () => {
                     </div>
                     <div className='charts-comparison'>
                         <BarChart
-                        xAxis={[{ scaleType: 'band', data: ['Revenue per 1000 units'] }]}
+                        xAxis={[{ scaleType: 'band', data: ['Revenue per 1000 kilos'] }]}
                         series={[{ data: [parseFloat(dataSet.price).toFixed(4)*1000,0] }, { data: [(parseFloat(dataSet.price) + 0.0356).toFixed(4)*1000,0] }]}
                         width={300}
                         height={400}
