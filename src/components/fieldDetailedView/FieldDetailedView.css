@@ -12,8 +12,48 @@
     display: flex;
     gap: 3em;
     padding: 3em;
+    justify-content: space-between;
 }
 
 .field-detailed-view-main-info{
     font-size: 2em;
+}
+
+.field-detailed-view-main-predictions{
+    width: 30%; 
+    box-shadow: 0 3px 10px rgb(0 0 0 / 0.2);
+    border-radius: 1em;
+    height: 65vh; 
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 1em; 
+    min-width: 30em; 
+}
+
+.field-data{
+    display: flex;
+    flex-direction: column;
+    gap: 0.2em; 
+    width: 100%; 
+    height: 50%; 
+    padding: 2em 0; 
+    font-size: 1.5em;
+}
+
+.field-current-data{
+    border-bottom: 2px solid black; 
+}
+
+.field-suggested-data{
+
+}
+
+.charts-comparison{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    box-shadow: 0 3px 10px rgb(0 0 0 / 0.2); 
+    border-radius: 1em;
 }

@@ -4,9 +4,9 @@ import { Link } from 'react-router-dom';
 
 
 const FieldCard = (props) => {
-    const {location, area, crop} = props.data;
-    const path = `/home/field/${location}/${area}/${crop}`;
-
+    const {country, area, crop} = props.data;
+    const path = `/home/field/${country}/${area}/${crop}`;
+    
     return(
         <Link to={path} className="field-card" style={{textDecoration: "none", color: "black"}}>
                 <div className="field-picture">

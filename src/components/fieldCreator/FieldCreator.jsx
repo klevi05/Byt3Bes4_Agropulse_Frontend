@@ -59,7 +59,19 @@ export default function FieldCreator() {
   };
 
   const handleSubmit = () => {
-    console.log(country, area, crop);
+    fetch('http://localhost:5000/farmerData',{mode:"cors", method:"POST", headers:{'Content-Type':'application/json'}, body:JSON.stringify({
+      "id": Math.random(1000),
+      "country": country,
+      "area": area,
+      "crop": crop
+    })}).then(response => response.json())
+    .then(response=>{
+      if(response.status_code == 300){
+        console.log("Problem with the data")
+      }else{
+        console.log("Succes")
+      }
+    })
     navigate('/home');
   };
 

@@ -34,8 +34,6 @@ function Login(){
                     console.log(error);
                 })
 
-                navigate('/home')
-
             }else{
                 setError('Please fill the fields below')
             }
