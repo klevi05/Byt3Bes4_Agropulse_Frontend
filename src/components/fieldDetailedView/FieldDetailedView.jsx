@@ -43,9 +43,9 @@ useEffect(() => {
                                     <h2>{parseFloat(dataSet.price).toFixed(4)}$</h2>
                                 </div>
                                 <div className='field-suggested-data field-data'>
-                                    <p>Suggested Crop</p>
+                                    <p>Suggested Crop for next year</p>
                                     <h2 style={{color: "#2e96ff"}}>{dataSet.items[Math.floor(Math.random()*2)+1]}</h2>
-                                    <p>Suggested Unit Price</p>
+                                    <p>Suggested Unit Price for next year</p>
                                     <h2 style={{color: "#2e96ff"}}>{(parseFloat(dataSet.price) + 0.0356).toFixed(4)}$</h2>
                                 </div>
                             </>
