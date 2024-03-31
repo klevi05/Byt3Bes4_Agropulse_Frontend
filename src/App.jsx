@@ -13,7 +13,7 @@ function App() {
         <Route path='/signIn' element={<SignIn/>}/>
         <Route path='/home' element={<Home/>}/>
         <Route path="/addField" element={<FieldCreator/>}/>
-        <Route path="/home/field/:fieldId" element={<FieldDetailedView />}/>
+        <Route path="/home/field/:location/:area/:crop" element={<FieldDetailedView />}/>
       </Routes>
     </BrowserRouter>
   )

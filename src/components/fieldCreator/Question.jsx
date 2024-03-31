@@ -15,7 +15,7 @@ const Question = ({count, setArea, setCountry, setCrop}) => {
         return(
             <div className="step-questions">
                 <form>
-                    <h2>Area</h2>
+                    <h2>Area (ha)</h2>
                     <input name="area" type="number" onChange={(e)=>setArea(e.target.value)}/>
                 </form>
             </div>
